@@ -1,8 +1,9 @@
 
 :toc:
 
-= Flutter Denver - gRPC Intro
+= gRPC and Flutter: An Introduction
+Levi Cook <levi@flutterdoctors.com>
+v1.0, 2019-05
 
 image::basic.blockdiag.svg[]
-
 image::basic.seqdiag.svg[]
