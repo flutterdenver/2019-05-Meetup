@@ -1,0 +1,29 @@
+
+== Tooling
+
+=== `asciidoctor`
+* Asciidoctor is a fast, open source text processor and publishing toolchain for converting AsciiDoc content to HTML5, DocBook, PDF, and other formats.
+* https://asciidoctor.org/
+* Prefer: `gem install asciidoctor`
+
+[#go-tooling]
+=== `go`
+* Asciidoctor is a fast, open source text processor and publishing toolchain for converting AsciiDoc content to HTML5, DocBook, PDF, and other formats.
+* https://golang.org/
+* Prefer: `brew install go`
+
+=== `reflex`
+* Run a command when files change
+* https://github.com/cespare/reflex
+* Prefer: `go get github.com/cespare/reflex`
+** Prereq: <<go-tooling>>
+
+=== `blockdiag`
+* simple block-diagram image generator
+* http://blockdiag.com/en/blockdiag/index.html
+* Prefer: `pip install blockdiag`
+
+=== `seqdiag`
+* simple sequence-diagram image generator
+* http://blockdiag.com/en/seqdiag/index.html
+* Prefer: `pip install seqdiag`
