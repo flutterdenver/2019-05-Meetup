@@ -1,0 +1,12 @@
+
+= Echo Demo: Unary RPC
+
+== Project Organization
+
+== Service Definition
+
+[source,proto,linenums]
+....
+include::api/echo_service.proto[]
+....
+<1> Declare we're using version 3 of the Protocol Buffers language

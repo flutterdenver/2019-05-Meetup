@@ -1,9 +1,72 @@
 
 :toc:
+:source-highlighter: pygments
 
 = gRPC and Flutter: An Introduction
 Levi Cook <levi@flutterdoctors.com>
 v1.0, 2019-05
 
-image::basic.blockdiag.svg[]
-image::basic.seqdiag.svg[]
+- [ ] Echo: Unary RPC
+- [ ] ??: Server Streaming RPC
+- [ ] ??: Client Streaming RPC
+- [ ] ??: Bidirectional Streaming RPC
+
+== What is gRPC?
+
+== Protocol Buffers?
+
+== Demos
+
+include::demos/echo-demo/index.adoc[leveloffset=2]
+
+=== ?? Demo: Server Streaming RPC
+
+...
+
+== Resources
+
+=== Documentation
+
+Website::
+https://grpc.io/ +
+Official documentation, libraries, resources, samples and FAQ
+
+gRPC Errors::
+http://avi.im/grpc-errors/ +
+Cross platform error handling is complicated, avoid reasoning it out on
+your own and use this site to make it a more seamless experience
+
+API Design Guide::
+https://cloud.google.com/apis/design/ +
+Google Cloud API Design Guide useful for gRPC API design insights and inspiration
+
+=== Community
+
+GitHub::
+https://github.com/grpc/
+
+Mailing List::
+https://groups.google.com/forum/#!forum/grpc-io
+
+Gitter Channel::
+https://gitter.im/grpc/grpc
+
+Reddit::
+https://www.reddit.com/r/grpc/
+
+Twitter::
+https://twitter.com/grpcio
+
+Weekly Meetings::
+https://docs.google.com/document/d/1DTMEbBNmzNbZBh8nOivsnnw3CwUr1Q7WGRe7rNxyHOU/edit
+
+=== Official Libraries
+
+gRPC Dart::
+https://github.com/grpc/grpc-dart
+
+gRPC Go::
+https://github.com/grpc/grpc-go
+
+gRPC Homebrew::
+https://github.com/grpc/homebrew-grpc

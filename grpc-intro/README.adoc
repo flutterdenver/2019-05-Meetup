@@ -18,6 +18,11 @@
 * Prefer: `go get github.com/cespare/reflex`
 ** Prereq: <<go-tooling>>
 
+=== Pygments
+* A generic syntax highlighter
+* http://pygments.org/
+* Prefer: `pip install Pygments`
+
 === `blockdiag`
 * simple block-diagram image generator
 * http://blockdiag.com/en/blockdiag/index.html
