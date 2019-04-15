@@ -4,7 +4,7 @@ package echo;
 
 message EchoMessage {
 	string value = 1;
-  bool reverse = 2;
+	bool reverse = 2;
 }
 
 service EchoService {
