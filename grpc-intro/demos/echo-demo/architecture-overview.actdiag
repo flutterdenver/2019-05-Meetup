@@ -1,0 +1,15 @@
+
+actdiag {
+  thing1 -> thing2 -> thing3
+
+  lane client {
+    label = "Client /\nFlutter App"
+    thing1 [label = "send an echo request"];
+    thing3 [label = "do thing 3"];
+  }
+
+  lane server {
+    label = "Server /\nGo Process"
+    thing2 [label = "receive and reverse the echo request"];
+  }
+}

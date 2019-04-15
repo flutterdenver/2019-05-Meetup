@@ -23,6 +23,11 @@
 * http://pygments.org/
 * Prefer: `pip install Pygments`
 
+=== `actdiag`
+* text-based activity diagram generator
+* http://blockdiag.com/en/actdiag/introduction.html
+* Prefer: `pip install actdiag`
+
 === `blockdiag`
 * simple block-diagram image generator
 * http://blockdiag.com/en/blockdiag/index.html

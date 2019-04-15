@@ -1,6 +1,19 @@
 
 = Echo Demo: Unary RPC
 
+== Arcitecturual Overview
+
+image::demos/echo-demo/architecture-overview.actdiag.svg[]
+
+== The Development Process
+
+. Defining our service
+. Implement our backend
+. Generate our app (flutter create)
+. Generate client stubs for our service
+. Integration testing
+. Attach boring user interface
+
 == Project Organization
 
 == Service Definition

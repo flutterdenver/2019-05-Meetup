@@ -1,27 +1,29 @@
 
 :toc:
+:toclevels: 4
+
 :source-highlighter: pygments
 
 = gRPC and Flutter: An Introduction
 Levi Cook <levi@flutterdoctors.com>
 v1.0, 2019-05
 
-- [ ] Echo: Unary RPC
-- [ ] ??: Server Streaming RPC
-- [ ] ??: Client Streaming RPC
-- [ ] ??: Bidirectional Streaming RPC
+// TODO
+//  Reverse
+//  Ping / Pong
+//- [ ] ??: Server Streaming RPC
+//- [ ] ??: Client Streaming RPC
+//- [ ] ??: Bidirectional Streaming RPC
 
 == What is gRPC?
 
-== Protocol Buffers?
+== What are Protocol Buffers?
 
 == Demos
 
 include::demos/echo-demo/index.adoc[leveloffset=2]
 
-=== ?? Demo: Server Streaming RPC
-
-...
+// === ?? Demo: Server Streaming RPC
 
 == Resources
 
