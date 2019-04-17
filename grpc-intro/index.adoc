@@ -9,8 +9,10 @@ Levi Cook <levi@flutterdoctors.com>
 v1.0, 2019-05
 
 // TODO
-//  Reverse
-//  Ping / Pong
+//  Echo + Reverse
+//  Ping / Pong -- Simple Bidirectional?
+//  Read Receipts
+
 //- [ ] ??: Server Streaming RPC
 //- [ ] ??: Client Streaming RPC
 //- [ ] ??: Bidirectional Streaming RPC
@@ -21,7 +23,7 @@ v1.0, 2019-05
 
 == Demos
 
-include::demos/echo-demo/index.adoc[leveloffset=2]
+include::demos/echo-demo/docs/index.adoc[leveloffset=2]
 
 // === ?? Demo: Server Streaming RPC
 

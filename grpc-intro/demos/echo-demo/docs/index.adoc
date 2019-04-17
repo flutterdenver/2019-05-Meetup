@@ -1,0 +1,70 @@
+
+= Echo Demo: Unary RPC
+
+== Arcitecturual Overview
+
+*echo-demo* is a small project that provides a working example of a
+mobile app communicating with a server using gRPC and Protocol Buffers.
+
+The _service definition_ is::
+. Located in `grpc-intro/demos/echo-demo/api`
+. Written in Protocol Buffers
+. Formal documentation of an api:
+.. provided by the server
+.. consumed by the mobile app
+. Used to generate client and server code
+
+The _server_ is::
+. Located in `grpc-intro/demos/echo-demo/backend`
+. Written in Go
+. Built and deployed with Docker
+
+The _mobile app_ is::
+. Located in `grpc-intro/demos/echo-demo/app`
+. Built with Flutter and deployed as a:
+.. native iOS application
+.. native Android application
+
+image::demos/echo-demo/docs/architecture-overview.actdiag.svg[width=50%]
+
+== The Development Process
+
+. Project Initialization
+. Defining our service
+. Implement our backend
+. Generate our app (flutter create)
+. Generate client stubs for our service
+. Integration testing
+. Attach boring user interface
+
+== Code Organization
+
+The *echo-demo* folder contains
+
+
+
+
+== Flutter Project Initialization
+
+[source,bash]
+....
+$ flutter doctor # <1>
+$ flutter create --project-name=echo_demo --org=com.flutterdoctors app # <2>
+$ cd app # <3>
+$ flutter emulators --launch apple_ios_simulator # <4>
+$ flutter run # <5>
+....
+
+1. Confirm flutter tools are installed and properly configured
+2. Create our Flutter project in the `app` directory (I prefer monorepo, ymmv)
+3. Change directories into the newly created `app`
+4. Launch an emulator, I chose the iOS Simulator
+5. Run your new/default project
+
+== Service Definition
+
+[source,proto,linenums]
+....
+include::api/echo_service.proto[]
+....
+<1> Declare we're using version 3 of the Protocol Buffers language
