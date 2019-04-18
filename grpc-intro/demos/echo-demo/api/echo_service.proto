@@ -1,12 +1,12 @@
-syntax = "proto3"; // <1>
+syntax = "proto3";
 
 package echo;
 
 message EchoMessage {
-	string value = 1;
-	bool reverse = 2;
+  string value = 1;
+  bool reverse = 2;
 }
 
 service EchoService {
-	rpc Echo(EchoMessage) returns(EchoMessage);
+  rpc Echo(EchoMessage) returns(EchoMessage);
 }
