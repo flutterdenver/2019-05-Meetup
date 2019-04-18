@@ -2,16 +2,11 @@
 
 generate: \
 	generate-dart \
-	generate-go \
-	generate-node
+	generate-go
 
 generate-dart:
-	@# README https://grpc.io/docs/quickstart/dart.html#prerequisites
-	@mkdir -p gen/pb-dart
-	@protoc --dart_out=grpc:gen/pb-dart echo_service.proto
+	@mkdir -p ../app/lib/api
+	@protoc --dart_out=grpc:../app/lib/api echo_service.proto
 
 generate-go:
-	@docker run -v `pwd`:/defs namely/protoc-all -f echo_service.proto -l go
-
-generate-node:
-	@docker run -v `pwd`:/defs namely/protoc-all -f echo_service.proto -l node
+	@protoc --go_out=plugins=grpc:../backend/api echo_service.proto
