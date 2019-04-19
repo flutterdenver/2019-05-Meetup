@@ -1,8 +1,18 @@
+.DEFAULT_GOAL = build
 
-build:
+build-echoc:
+	@go install ./cmd/echoc
+
+build-echod:
 	@docker build --tag flutterdenver/echod .
 
-run:
+build: build-echoc build-echod
+
+run-echoc: build-echoc
+	echoc
+	echoc -r
+
+run-echod: build-echod
 	@docker run -p 9000:9000 flutterdenver/echod:latest
 
 cover:
