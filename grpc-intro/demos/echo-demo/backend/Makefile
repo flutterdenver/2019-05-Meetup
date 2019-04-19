@@ -1,9 +1,9 @@
 
 build:
-	@docker build --tag echo-backend .
+	@docker build --tag echod .
 
 run: build
-	@docker run echo-backend:latest
+	@docker run -p 9000:9000 echod:latest
 
 cover:
 	@go test -coverprofile=${TMPDIR}/coverprofile ./...

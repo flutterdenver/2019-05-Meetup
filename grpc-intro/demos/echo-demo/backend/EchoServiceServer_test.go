@@ -1,12 +1,10 @@
-package main
+package backend_test
 
 import (
+	"backend"
 	"backend/api"
 	"context"
 	"fmt"
-	"path/filepath"
-	"reflect"
-	"runtime"
 	"testing"
 
 	"google.golang.org/grpc/codes"
@@ -127,19 +125,11 @@ func TestEchoServiceServer(t *testing.T) {
 		testName := fmt.Sprintf("[%v] %v", i, scenario.name)
 		t.Run(testName, func(t *testing.T) {
 			ctx := context.Background()
-			svc := EchoServiceServer{}
+			svc := backend.EchoServiceServer{}
 
 			actMsg, actErr := svc.Echo(ctx, scenario.inMsg)
 			assertEqual(t, scenario.expMsg, actMsg)
 			assertEqual(t, scenario.expErr, actErr)
 		})
-	}
-}
-
-func assertEqual(tb testing.TB, exp, act interface{}) {
-	if !reflect.DeepEqual(exp, act) {
-		_, file, line, _ := runtime.Caller(1)
-		fmt.Printf("\033[31m%s:%d:\n\n\texp: %#v\n\n\tact: %#v\033[39m\n\n", filepath.Base(file), line, exp, act)
-		tb.FailNow()
 	}
 }
