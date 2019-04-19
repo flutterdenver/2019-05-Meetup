@@ -35,28 +35,30 @@ type logEntry struct {
 	keys []string
 }
 
-type MockGrpcServer struct {
+type FakeGrpcServer struct {
 	serve        func(net.Listener) error
 	gracefulStop func()
+	stop         func()
 }
 
-func (m MockGrpcServer) Serve(l net.Listener) error { return m.serve(l) }
-func (m MockGrpcServer) GracefulStop()              { m.gracefulStop() }
+func (m FakeGrpcServer) Serve(l net.Listener) error { return m.serve(l) }
+func (m FakeGrpcServer) GracefulStop()              { m.gracefulStop() }
+func (m FakeGrpcServer) Stop()                      { m.stop() }
 
-type MockAddr struct {
+type FakeAddr struct {
 	network func() string
 	stringf func() string
 }
 
-func (m MockAddr) Network() string { return m.network() }
-func (m MockAddr) String() string  { return m.stringf() }
+func (m FakeAddr) Network() string { return m.network() }
+func (m FakeAddr) String() string  { return m.stringf() }
 
-type MockListener struct {
+type FakeListener struct {
 	accept func() (net.Conn, error)
 	closef func() error
 	addr   func() net.Addr
 }
 
-func (m MockListener) Accept() (net.Conn, error) { return m.accept() }
-func (m MockListener) Close() error              { return m.closef() }
-func (m MockListener) Addr() net.Addr            { return m.addr() }
+func (m FakeListener) Accept() (net.Conn, error) { return m.accept() }
+func (m FakeListener) Close() error              { return m.closef() }
+func (m FakeListener) Addr() net.Addr            { return m.addr() }

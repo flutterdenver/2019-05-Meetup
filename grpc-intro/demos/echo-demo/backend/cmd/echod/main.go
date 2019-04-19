@@ -16,6 +16,11 @@ func main() {
 		log.Fatalf("logger creation failed: %v", err)
 	}
 
+	logger = logger.With(
+		zap.String("cmd", "echod"),
+		zap.Int("pid", os.Getpid()),
+	)
+
 	port := fmt.Sprintf(":%v", os.Getenv("PORT"))
 	l, err := net.Listen("tcp", port)
 	if err != nil {

@@ -2,7 +2,7 @@ package backend
 
 import (
 	"backend/api"
-	"time"
+	"os"
 
 	"os/signal"
 
@@ -19,7 +19,7 @@ func NewServer(
 	logger *zap.Logger,
 	echoServiceServer api.EchoServiceServer,
 ) *Server {
-	GrpcServer := grpc.NewServer(
+	grpcServer := grpc.NewServer(
 		grpc_middleware.WithUnaryServerChain(
 			grpc_validator.UnaryServerInterceptor(),
 			grpc_zap.UnaryServerInterceptor(logger),
@@ -32,14 +32,13 @@ func NewServer(
 		),
 	)
 
-	api.RegisterEchoServiceServer(GrpcServer, echoServiceServer)
+	api.RegisterEchoServiceServer(grpcServer, echoServiceServer)
 
 	return &Server{
+		Exit:       os.Exit,
 		Fatal:      logger.Fatal,
 		Info:       logger.Info,
-		Now:        time.Now,
-		Since:      time.Since,
-		GrpcServer: GrpcServer,
+		GrpcServer: grpcServer,
 		Notify:     signal.Notify,
 	}
 }

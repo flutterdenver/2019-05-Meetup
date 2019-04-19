@@ -1,9 +1,9 @@
 
 build:
-	@docker build --tag echod .
+	@docker build --tag flutterdenver/echod .
 
-run: build
-	@docker run -p 9000:9000 echod:latest
+run:
+	@docker run -p 9000:9000 flutterdenver/echod:latest
 
 cover:
 	@go test -coverprofile=${TMPDIR}/coverprofile ./...
