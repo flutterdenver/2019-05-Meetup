@@ -53,5 +53,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("recd:", msg.Value)
+	fmt.Println("recv:", msg.Value)
 }
