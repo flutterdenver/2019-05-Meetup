@@ -61,6 +61,20 @@ $ flutter run # <5>
 4. Launch an emulator, I chose the iOS Simulator
 5. Run your new/default project
 
+Depend on it:
+Install it:
+$ pub get
+Resolving dependencies...
+Because echo_demo depends on flutter_test any from sdk which doesn't exist (the Flutter SDK is not available), version solving failed.
+
+Flutter users should run `flutter packages get` instead of `pub get`.
+
+...
+
+
+https://pub.dartlang.org/packages/grpc#-installing-tab-
+https://pub.dartlang.org/packages/protobuf#-installing-tab-
+
 == Service Definition
 
 [source,proto,linenums]
