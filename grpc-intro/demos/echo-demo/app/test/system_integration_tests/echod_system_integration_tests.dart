@@ -37,7 +37,8 @@ void main() {
       options: CallOptions(),
     );
 
-    sleep(Duration(seconds: 1)); // TODO: How do I "wait" for a client connection instead of sleeping?
+    // TODO: How do I "wait" for a client connection instead of sleeping?
+    sleep(Duration(seconds: 1));
   });
 
   tearDownAll(() async {
