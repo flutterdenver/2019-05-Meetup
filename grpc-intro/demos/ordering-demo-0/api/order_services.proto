@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package ordering;
+
+message Customer {
+	string id   = 1;
+	string name = 2;
+}
+
+message Item {
+  string id          = 1;
+  string description = 2;
+  int32  quantity    = 3;
+}
+
+message Order {
+	string        id          = 1;
+	string        customer_id = 2;
+	repeated Item items       = 3;
+}
+
+message OrderStatus {
+  enum State {
+    UNKNOWN    = 0; // "future proofing"
+    RECEIEVED  = 1;
+    CONFIRMED  = 2;
+    PREPARING  = 3;
+    PREPARED   = 4;
+    DELIVERING = 5;
+    DELIVERED  = 6;
+  }
+
+	string order_id = 1;
+  State  state    = 2;
+}
+
+message TrackingRequest {
+	string order_id = 1;
+}
+
+service OrderService {
+  rpc CreateOrder(Order) returns(OrderStatus);
+  rpc TrackOrder(TrackingRequest) returns (stream OrderStatus);
+}
